@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\main",
+    "\\src\\main\\java",
+    "\\src\\main\\java\\tudelft",
+    "\\src\\main\\java\\tudelft\\gettingstarted",
+    "\\src\\test",
+    "\\src\\test\\java",
+    "\\src\\test\\java\\tudelft",
+    "\\src\\test\\java\\tudelft\\gettingstarted"
+  ],
+  "SelectedNode": "\\src\\test\\java\\tudelft\\gettingstarted\\GettingStartedTest.java",
+  "PreviewInSolutionExplorer": false
+}
