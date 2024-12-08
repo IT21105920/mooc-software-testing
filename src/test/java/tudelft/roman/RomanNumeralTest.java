@@ -33,4 +33,14 @@ public class RomanNumeralTest {
         int result = roman.convert("XLIV");
         Assertions.assertEquals(44, result);
     }
+
+    @Test
+    public void Invalidnumber() {
+        RomanNumeral roman = new RomanNumeral();
+        Exception exception = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            roman.convert("VX");
+        });
+        Assertions.assertEquals("Invalid Roman numeral: VX", exception.getMessage());
+    }
 }
+

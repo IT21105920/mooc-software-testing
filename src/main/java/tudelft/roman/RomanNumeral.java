@@ -19,19 +19,25 @@ public class RomanNumeral {
     }
 
     public int convert(String s) {
+        if (!isValidRomanNumeral(s)) {
+            throw new IllegalArgumentException("Invalid Roman numeral: " + s);
+        }
 
         int convertedNumber = 0;
-        for(int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < s.length(); i++) {
             int currentNumber = map.get(s.charAt(i));
-            int next = i+1 < s.length() ? map.get(s.charAt(i+1)) : 0;
+            int next = i + 1 < s.length() ? map.get(s.charAt(i + 1)) : 0;
 
-            if(currentNumber >= next)
+            if (currentNumber >= next)
                 convertedNumber += currentNumber;
             else
                 convertedNumber -= currentNumber;
         }
 
         return convertedNumber;
+    }
 
+    private boolean isValidRomanNumeral(String s) {
+        return s.matches("^(M{0,3})(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$");
     }
 }
