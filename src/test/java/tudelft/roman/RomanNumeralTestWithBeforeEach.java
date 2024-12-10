@@ -13,6 +13,7 @@ public class RomanNumeralTestWithBeforeEach {
         this.roman = new RomanNumeral();
     }
 
+
     @Test
     public void singleNumber() {
         int result = roman.convert("I");
@@ -35,5 +36,13 @@ public class RomanNumeralTestWithBeforeEach {
     public void numberWithAndWithoutSubtractiveNotation() {
         int result = roman.convert("XLIV");
         Assertions.assertEquals(44, result);
+    }
+
+    @Test
+    public void Invalidnumber() {
+        Exception exception = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            roman.convert("VX");
+        });
+        Assertions.assertEquals("Invalid Roman numeral: VX", exception.getMessage());
     }
 }
